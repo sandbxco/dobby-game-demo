@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Purchases</title>
+
+    <style>
+        table, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        thead {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+<h4>User: <span th:text="${username}"/></h4>
+<h4>Environment: <span th:text="${dobby_url}"/></h4>
+<h4>Purchases: </h4>
+
+<table>
+    <thead>
+    <tr>
+        <td>Uuid</td>
+        <td>State</td>
+        <td>Price, USD</td>
+        <td>Purpose</td>
+        <td>Action</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="purchase : ${purchases}">
+        <td th:text="${purchase.purchaseUuid}"/>
+        <td th:text="${purchase.state}"/>
+        <td th:text="${purchase.price}"/>
+        <td th:text="${purchase.purpose}"/>
+        <td><a th:href="@{'/purchases?consumeUuid=' + ${purchase.purchaseUuid}}">Consume it!</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<h4 th:text="${status}"></h4>
+
+</body>
+</html>

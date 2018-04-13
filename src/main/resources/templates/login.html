@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dobby OAuth2 example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<header>
+    <title>Login</title>
+</header>
+<div align="center">
+    <h3>Let's test a Dobby OAuth2</h3>
+
+    <h4><span th:text="${dobby_url}"/></h4>
+
+
+    <a th:href="${authorize_url}"> Login with Dobby</a>
+</div>
+
+</body>
+</html>
