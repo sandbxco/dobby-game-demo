@@ -57,7 +57,7 @@ public class PurchaseController {
 
         HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
 
-        String url = env.getDobbyUrl() + "/api/portal/api/games/" + env.getDobbyGameUuid() + "/purchases/";
+        String url = env.getDobbyUrl() + "/api/games/" + env.getDobbyGameUuid() + "/purchases/";
         ResponseEntity<PurchaseResponse> response = restTemplate.exchange(url, HttpMethod.GET, entity, PurchaseResponse.class);
 
 
@@ -72,7 +72,7 @@ public class PurchaseController {
 
         HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
 
-        String url = env.getDobbyUrl() + "/api/portal/api/purchases/" + purchaseUuid + "/consume";
+        String url = env.getDobbyUrl() + "/api/purchases/" + purchaseUuid + "/consume";
         ResponseEntity<String> responseJson = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
 
         Map<String, Object> responseMap = parseJson(responseJson.getBody());
