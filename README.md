@@ -7,13 +7,15 @@ An example for Game integration with PowerKingdoms API for Spring Boot(Java).
 
 2. [Install maven](https://maven.apache.org/install.html)
 
-3. Run application 
-    
+3. Run application     
   `mvn spring-boot:run`
   
 4. [Open in browser](http://localhost:8080)
 
-
+5. User credentials:
+    - login: `demo@example.com`
+    - password: `Demo!123`
+    
 ## Configuration
 In case you need to change any properties (credential, environment, etc):
 modify `./src/main/resources/application.properties` and rebuild the project
